@@ -2,6 +2,18 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ApiGatewayApplication",
+      "request": "launch",
+      "mainClass": "com.pi.apigateway.ApiGatewayApplication"
+    },
+    {
+      "type": "java",
+      "name": "CourtierServiceApplication",
+      "request": "launch",
+      "mainClass": "com.pi.courtierservice.CourtierServiceApplication"
+    },
+    {
+      "type": "java",
       "name": "ConfigServerApplication",
       "request": "launch",
       "mainClass": "com.pi.configserver.ConfigServerApplication"
@@ -11,7 +23,8 @@
       "name": "KitchenServiceApplication",
       "request": "launch",
       "mainClass": "com.pi.kitchenservice.KitchenServiceApplication",
-      "projectName": "kitchen-service"
+      "projectName": "kitchen-service",
+      "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=5158 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=kitchen-service"
     },
     {
       "type": "java",
@@ -51,6 +64,36 @@
       "args": "",
       "envFile": "${workspaceFolder}/.env",
       "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=21813 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=order-service"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-CourtierServiceApplication<courtier-service>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.pi.courtierservice.CourtierServiceApplication",
+      "projectName": "courtier-service",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-RestaurantServiceApplication<restaurant-service>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.pi.restaurantservice.RestaurantServiceApplication",
+      "projectName": "restaurant-service",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ApiGatewayApplication<api-gateway>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.pi.apigateway.ApiGatewayApplication",
+      "projectName": "api-gateway",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
     }
   ]
 }

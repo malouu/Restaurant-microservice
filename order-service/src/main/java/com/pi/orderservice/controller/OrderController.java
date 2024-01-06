@@ -26,7 +26,8 @@ public class OrderController {
     private OrderRepository orderRepository;
 
     @PostMapping
-    public Order add(@RequestBody Order order) {
+    public Order createOrder(@RequestBody Order order) {
+        order.create();
         LOGGER.info("Order add: {}", order);
         return orderRepository.addOrder(order);
     }
@@ -42,4 +43,19 @@ public class OrderController {
         LOGGER.info("Order find: id={}", id);
         return orderRepository.findById(id);
     }
+
+    // cancel order changes the status of the order to cancelled
+    @PostMapping("/{id}/cancel")
+    public Order cancelOrder(@PathVariable Long id) {
+        LOGGER.info("Order cancel: id={}", id);
+        return orderRepository.cancelOrder(id);
+    }
+
+    // revise order modifies the order
+    @PostMapping("/{id}/revise")
+    public Order reviseOrder(@PathVariable Long id, @RequestBody Order order) {
+        LOGGER.info("Order revise: id={}, order={}", id, order);
+        return orderRepository.reviseOrder(id, order);
+    }
+
 }

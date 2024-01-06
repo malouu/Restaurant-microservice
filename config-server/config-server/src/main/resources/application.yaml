@@ -1,6 +1,0 @@
-server:
-    port: 8080
-
-spring:
-    profiles:
-        active: native # 本地配置文件

@@ -6,6 +6,8 @@ import com.pi.courtierservice.model.Courtier;
 import java.util.ArrayList;
 import java.util.List;
 
+// import org.springframework.data.jpa.repository.JpaRepository;
+
 @Repository
 public class CourtierRepository {
     private List<Courtier> courtiers = new ArrayList<>();

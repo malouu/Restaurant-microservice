@@ -23,7 +23,7 @@ spring:
 
 application:
   config:
-    orders-url: http://localhost:8222/api/v1/orders
+    orders-url: http://localhost:8222/api/v1/courtiers
 
 management:
   tracing:

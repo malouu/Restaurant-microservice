@@ -22,7 +22,7 @@ import org.slf4j.LoggerFactory;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/api/courtiers")
+@RequestMapping("/api/v1/courtiers")
 public class CourtierController {
     private static final Logger LOGGER =  LoggerFactory.getLogger(CourtierController.class);
 

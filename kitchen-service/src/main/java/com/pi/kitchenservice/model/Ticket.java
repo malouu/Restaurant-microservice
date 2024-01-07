@@ -79,6 +79,9 @@ public class Ticket {
         this.state = State.ACCEPTED;
     }
 
+    public void preparing() {
+        this.state = State.PREPARING;
+    }
 
 
 

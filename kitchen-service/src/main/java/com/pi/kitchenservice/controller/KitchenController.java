@@ -30,6 +30,7 @@ public class KitchenController {
 
     @PostMapping
     public Ticket createTicket(@RequestBody Ticket ticket) {
+        ticket.preparing();
         LOGGER.info("Ticket add: {}", ticket);
         return ticketRepository.addTicket(ticket);
     }

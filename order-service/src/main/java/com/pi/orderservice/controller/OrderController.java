@@ -4,6 +4,7 @@ import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,8 +20,9 @@ import org.slf4j.Logger;
 
 import org.slf4j.LoggerFactory;
 
+
 @RestController
-@RequestMapping("/api/orders")
+@RequestMapping("/api/v1/orders")
 public class OrderController {
     private static final Logger LOGGER =  LoggerFactory.getLogger(OrderController.class);
     @Autowired
@@ -58,5 +60,6 @@ public class OrderController {
         LOGGER.info("Order revise: id={}, order={}", id, order);
         return orderRepository.reviseOrder(id, order);
     }
+    
 
 }

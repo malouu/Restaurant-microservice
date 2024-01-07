@@ -8,6 +8,7 @@ import com.pi.restaurantservice.repository.RestaurantRepository;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,8 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/api/restaurants")
+@RequestMapping("/api/v1/restaurants")
 public class RestaurantController {
     private static final Logger LOGGER =  LoggerFactory.getLogger(RestaurantController.class);
     @Autowired

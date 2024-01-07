@@ -12,14 +12,26 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: students
-          uri: http://localhost:8090
+        - id: courtiers
+          uri: http://localhost:8071
           predicates:
-            - Path=/api/v1/students/**
-        - id: schools
+            - Path=/api/v1/courtiers/**
+        - id: kitchens
           uri: http://localhost:8070
           predicates:
-            - Path=/api/v1/schools/**
+            - Path=/api/v1/tickets/**
+        - id: orders
+          uri: http://localhost:8090
+          predicates:
+            - Path=/api/v1/orders/**
+        - id: restaurants
+          uri: http://localhost:8072
+          predicates:
+            - Path=/api/v1/restaurants/**
+        - id: chat
+          uri: http://127.0.0.1:8000
+          predicates:
+            - Path=/**
 
 management:
   tracing:

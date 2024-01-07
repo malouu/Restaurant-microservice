@@ -21,6 +21,10 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
+application:
+  config:
+    restaurants-url: http://localhost:8222/api/v1/restaurants
+
 management:
   tracing:
     sampling:

@@ -24,5 +24,17 @@ public class OrderRepository {
         return orders;
     }
 
+    public Order cancelOrder(Long id) {
+        Order order = findById(id);
+        order.cancel();
+        return order;
+    }
+
+    public Order reviseOrder(Long id, Order order) {
+        Order orderToRevise = findById(id);
+        orderToRevise.revise(order);
+        return orderToRevise;
+    }
+
     
 }

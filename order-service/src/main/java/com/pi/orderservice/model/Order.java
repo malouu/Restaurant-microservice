@@ -2,7 +2,7 @@ package com.pi.orderservice.model;
 
 public class Order {
 
-    enum State {
+   enum State {
         created, accepted, canceled, ready
     }
 
@@ -59,4 +59,25 @@ public class Order {
                 + "]";
     }
 
+    public void cancel() {
+        this.state = State.canceled;
+    }
+
+    public void accept() {
+        this.state = State.accepted;
+    }
+
+    public void ready() {
+        this.state = State.ready;
+    }
+
+    public void create() {
+        this.state = State.created;
+    }
+
+    public void revise(Order order) {
+        this.customerId = order.getCustomerId();
+        this.restaurantId = order.getRestaurantId();
+        this.state = order.getState();
+    }
 }

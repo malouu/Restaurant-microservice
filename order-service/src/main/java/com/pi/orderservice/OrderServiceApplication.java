@@ -16,18 +16,4 @@ public class OrderServiceApplication {
 		SpringApplication.run(OrderServiceApplication.class, args);
 	}
 
-	@Bean
-	public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurer() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				// allow all origins to access the service
-				// allow preflight requests
-				registry.addMapping("/**").allowedOrigins("*").allowedMethods("GET", "POST", "PUT",
-						"DELETE", "OPTIONS", "HEAD").allowedHeaders("Requestor-Type").exposedHeaders("X-Get-Header");
-				
-			}
-		};
-	}
-
 }

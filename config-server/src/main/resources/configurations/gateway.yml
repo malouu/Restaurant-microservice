@@ -28,6 +28,10 @@ spring:
           uri: http://localhost:8072
           predicates:
             - Path=/api/v1/restaurants/**
+        - id: chat
+          uri: http://127.0.0.1:8000
+          predicates:
+            - Path=/**
 
 management:
   tracing:

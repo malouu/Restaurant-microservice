@@ -1,74 +1,74 @@
 package com.pi.courtierservice.model;
 
 public class Courtier {
-//     Cin : le numéro de sa carte d’identité
-// Nom : le nom du courtier
-// Téléphone : le numéro de téléphone du
-// courtier
-// Disponible : booléen qui indique s’il est
-// disponible
+    private Long Cin;
+    private String Name;
+    private String Telephone;
+    private boolean Available;
+    private Location Location;
 
-private Long Cin;
-@Override
-public String toString() {
-    return "Courtier [Cin=" + Cin + ", Name=" + Name + ", Telephone=" + Telephone + ", Available=" + Available + "]";
-}
+    public Courtier() {
+    }
 
+    public Courtier(Long cin, String name, String telephone, boolean available, Location location) {
+        Cin = cin;
+        Name = name;
+        Telephone = telephone;
+        Available = available;
+        Location = location;
+    }
 
-private String Name;
-private String Telephone;
-private boolean Available;
+    // Other getters and setters...
 
-public Courtier() {
-}
+    public Location getLocation() {
+        return Location;
+    }
 
-public Courtier(Long cin, String name, String telephone, boolean available) {
-    Cin = cin;
-    Name = name;
-    Telephone = telephone;
-    Available = available;
-}
+    public void setLocation(Location location) {
+        Location = location;
+    }
 
-public Long getCin() {
-    return Cin;
-}
+    public void edit(Courtier courtier) {
+        this.Name = courtier.getName();
+        this.Telephone = courtier.getTelephone();
+        this.Available = courtier.isAvailable();
+        this.Location = courtier.getLocation();
+    }
 
-public void setCin(Long cin) {
-    Cin = cin;
-}
+    @Override
+    public String toString() {
+        return "Courtier [Cin=" + Cin + ", Name=" + Name + ", Telephone=" + Telephone + ", Available=" + Available + ", Location=" + Location + "]";
+    }
 
-public String getName() {
-    return Name;
-}
+    public Long getCin() {
+        return Cin;
+    }
 
-public void setName(String name) {
-    Name = name;
-}
+    public void setCin(Long cin) {
+        Cin = cin;
+    }
 
-public String getTelephone() {
-    return Telephone;
-}
+    public String getName() {
+        return Name;
+    }
 
-public void setTelephone(String telephone) {
-    Telephone = telephone;
-}
+    public void setName(String name) {
+        Name = name;
+    }
 
-public boolean isAvailable() {
-    return Available;
-}
+    public String getTelephone() {
+        return Telephone;
+    }
 
-public void setAvailable(boolean available) {
-    Available = available;
-}
+    public void setTelephone(String telephone) {
+        Telephone = telephone;
+    }
 
+    public boolean isAvailable() {
+        return Available;
+    }
 
-public void edit(Courtier courtier) {
-    this.Name = courtier.getName();
-    this.Telephone = courtier.getTelephone();
-    this.Available = courtier.isAvailable();
-
-
-
-
-    
+    public void setAvailable(boolean available) {
+        Available = available;
+    }
 }

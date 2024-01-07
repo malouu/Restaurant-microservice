@@ -28,5 +28,17 @@ public class CourtierRepository {
         courtierToEdit.edit(courtier);
         return courtierToEdit;
     }
+
+    public Courtier editLocationCourtier(Long id, Courtier courtier) {
+        Courtier courtierToEdit = findById(id);
+        courtierToEdit.setLocation(courtier.getLocation());
+        return courtierToEdit;
+    }
+
+    public Courtier deleteCourtier(Long id) {
+        Courtier courtierToDelete = findById(id);
+        courtiers.remove(courtierToDelete);
+        return courtierToDelete;
+    }
     
 }

@@ -1,13 +1,18 @@
 package com.pi.kitchenservice.model;
 
 public class Ticket {
+
+    enum State {
+        PREPARING, READY, PICKED_UP, DELIVERED, CANCELED, ACCEPTED
+    }
+
     private Long id;
-    private String state;
+    private State state;
     private Long restaurantId;
     private String preparingTime;
     private String pickedUpTime;
 
-    public Ticket(Long id, String state, Long restaurantId, String preparingTime, String pickedUpTime) {
+    public Ticket(Long id, State state, Long restaurantId, String preparingTime, String pickedUpTime) {
         this.id = id;
         this.state = state;
         this.restaurantId = restaurantId;
@@ -23,11 +28,11 @@ public class Ticket {
         this.id = id;
     }
 
-    public String getState() {
+    public State getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(State state) {
         this.state = state;
     }
 
@@ -54,6 +59,28 @@ public class Ticket {
     public void setPickedUpTime(String pickedUpTime) {
         this.pickedUpTime = pickedUpTime;
     }
+
+    public void edit(Ticket ticket) {
+        this.state = ticket.getState();
+        this.restaurantId = ticket.getRestaurantId();
+        this.preparingTime = ticket.getPreparingTime();
+        this.pickedUpTime = ticket.getPickedUpTime();
+    }
+
+    public void ready() {
+        this.state = State.READY;
+    }
+
+    public void pickedUp() {
+        this.state = State.PICKED_UP;
+    }
+
+    public void accepted() {
+        this.state = State.ACCEPTED;
+    }
+
+
+
 
     @Override
     public String toString() {

@@ -59,6 +59,15 @@ public class Adresse {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    public void edit(Adresse adresse) {
+        this.number = adresse.getNumber();
+        this.name = adresse.getName();
+        this.street = adresse.getStreet();
+        this.city = adresse.getCity();
+        this.region = adresse.getRegion();
+    }
+
     @Override
     public String toString() {
         return "Adresse [id=" + id + ", number=" + number + ", name=" + name + ", street=" + street + ", city=" + city

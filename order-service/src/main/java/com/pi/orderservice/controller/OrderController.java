@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +20,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/api/orders")
 public class OrderController {
     private static final Logger LOGGER =  LoggerFactory.getLogger(OrderController.class);
     @Autowired
@@ -45,14 +46,14 @@ public class OrderController {
     }
 
     // cancel order changes the status of the order to cancelled
-    @PostMapping("/{id}/cancel")
+    @PutMapping("/{id}/cancel")
     public Order cancelOrder(@PathVariable Long id) {
         LOGGER.info("Order cancel: id={}", id);
         return orderRepository.cancelOrder(id);
     }
 
     // revise order modifies the order
-    @PostMapping("/{id}/revise")
+    @PutMapping("/{id}")
     public Order reviseOrder(@PathVariable Long id, @RequestBody Order order) {
         LOGGER.info("Order revise: id={}, order={}", id, order);
         return orderRepository.reviseOrder(id, order);

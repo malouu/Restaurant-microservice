@@ -57,6 +57,6 @@ def prompting(text : str, character : int):
 
 
 @app.post('/chat')
-async def summarize_text(text: str):
-    summary = prompting(text,150)
-    return {'summary': summary}
+async def summarize_text(summary: Summary):
+    result = prompting(summary,150)
+    return {'summary': result}

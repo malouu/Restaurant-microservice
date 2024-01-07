@@ -19,7 +19,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @RestController
-@RequestMapping("/api/restaurants")
+@RequestMapping("/api/v1/restaurants")
 public class RestaurantController {
     private static final Logger LOGGER =  LoggerFactory.getLogger(RestaurantController.class);
     @Autowired
